@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "minimist": "*"
+    "minimist": "*",
+    "tftp": "^0.1.2"
   }
 }
