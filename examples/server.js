@@ -8,8 +8,8 @@ var s = dhcpd.createServer({
   ],
   forceOptions: ['hostname'], // Options that need to be sent, even if they were not requested
   randomIP: true, // Get random new IP from pool instead of keeping one ip
-  static: {
-    "11:22:33:44:55:66": "192.168.3.100"
+  staticFunction: function (mac, callback) {
+    callback('192.168.3.150');
   },
 
   // Option settings
