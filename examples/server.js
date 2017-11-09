@@ -32,15 +32,8 @@ var s = dhcpd.createServer({
   leaseTime: 86400,
   renewalTime: 60,
   rebindingTime: 120,
-  bootFile: function (req, res) {
-
-    // res.ip - the actual ip allocated for the client
-
-    if (req.clientId === 'foo bar') {
-      return 'x86linux.0';
-    } else {
-      return 'x64linux.0';
-    }
+  bootFile: function (mac, callback) {
+    return callback(mac);
   }
 });
 
